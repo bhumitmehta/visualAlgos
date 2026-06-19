@@ -106,10 +106,12 @@ We want AlgoViz to be the "Wikipedia" of algorithms, which means we need the com
 
 To add a new algorithm (e.g., Dijkstra's, Merge Sort, Knapsack):
 
-1. Create a new file in `algorithms/` (e.g., `dijkstra.ts`).
-2. Write a `buildDijkstraSteps(graph)` function that returns a `Step[]` array.
-3. Create a new UI panel in `components/panels/` if your algorithm requires a unique visual (like a Graph node-link diagram instead of a 2D grid).
-4. Submit a Pull Request!
+You can use AI like claude or qwen to generate interactive animation based on the algorithm  
+1. Just create a page.tsx, with all the required animations file for the give problem statement 
+2. Save it in a folder named problem name
+3. Add metadata.ts file to the folder
+4. Review the generated or created animation thoroughly  .
+5. Submit a Pull Request!
 
 *Check out `CONTRIBUTING.md` for detailed guidelines on the `Step` interface.*
 
