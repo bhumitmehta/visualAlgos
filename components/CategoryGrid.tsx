@@ -1,14 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import type { CategoryGridProps } from "./types";
+import { ArrowRight, Cpu, BrainCircuit, TrendingUp, FlaskConical, Network, BarChart3, Waves, Atom } from "lucide-react";
+import type { CategoryGridProps, CategoryIconKey } from "./types";
+
+// ─── Icon map ─────────────────────────────────────────────────────────────────
+// Lucide components live here, not in page.tsx (Server Component).
+// page.tsx passes a plain string key; this map resolves it client-side.
+// To support a new icon: add it to CategoryIconKey in types.ts AND here.
+const ICON_MAP: Record<CategoryIconKey, React.ElementType> = {
+  Cpu,
+  BrainCircuit,
+  TrendingUp,
+  FlaskConical,
+  Network,
+  BarChart3,
+  Waves,
+  Atom,
+};
 
 export default function CategoryGrid({ categories }: CategoryGridProps) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {categories.map((cat) => {
-        const Icon = cat.icon;
+        const Icon = ICON_MAP[cat.icon];
         return (
           <Link
             key={cat.id}

@@ -1,49 +1,63 @@
+// components/types.ts
+// Shared prop interfaces for all VisuPedia components.
 
-
-import type { LucideIcon } from "lucide-react";
 // ─── Navbar ───────────────────────────────────────────────────────────────────
 export interface NavLink {
   label: string;
   href: string;
 }
- 
+
 export interface NavbarProps {
   links: NavLink[];
   onSearch?: (query: string) => void;
 }
- 
+
 // ─── HeroSection ─────────────────────────────────────────────────────────────
 export interface HeroProps {
   tagline: string;
   subtagline: string;
   ctaLabel: string;
   ctaHref: string;
-  /** Total number of visualizations in the library — shown as a stat */
   totalVisualizations: number;
-  /** Total number of domains/categories */
   totalDomains: number;
 }
- 
+
 // ─── CategoryGrid ────────────────────────────────────────────────────────────
+/**
+ * Plain string keys that map to Lucide icons INSIDE CategoryGrid (client component).
+ * Never pass a Lucide component object as a prop from a Server Component —
+ * it can't be serialized. Pass this string key instead; CategoryGrid resolves it.
+ * To add a new icon: add the key here + add it to ICON_MAP in CategoryGrid.tsx.
+ */
+export type CategoryIconKey =
+  | "Cpu"
+  | "BrainCircuit"
+  | "TrendingUp"
+  | "FlaskConical"
+  | "Network"
+  | "BarChart3"
+  | "Waves"
+  | "Atom";
+
 export interface Category {
   id: string;
   slug: string;
   label: string;
   description: string;
-  /** Lucide icon component */
-  icon: LucideIcon;
-  /** Number of visualizations in this category */
+  /**
+   * Icon name string — resolved to a Lucide component inside CategoryGrid.
+   * Must be a plain string so it serializes across the server/client boundary.
+   */
+  icon: CategoryIconKey;
   count: number;
-  /** Accent color for the icon background */
   accentColor: string;
-  /** Text color for the icon */
   iconColor: string;
 }
- 
+
 export interface CategoryGridProps {
   categories: Category[];
 }
- 
+
 // ─── FeaturedVisualization ───────────────────────────────────────────────────
 export interface FeaturedViz {
   id: string;
@@ -52,29 +66,26 @@ export interface FeaturedViz {
   description: string;
   domain: string;
   difficulty: "Beginner" | "Intermediate" | "Advanced";
-  /** How long to understand the core concept */
   readMinutes: number;
-  /** Tags such as ["Graph", "BFS", "Shortest Path"] */
   tags: string[];
 }
- 
+
 export interface FeaturedVisualizationProps {
   visualization: FeaturedViz;
 }
- 
+
 // ─── Footer ──────────────────────────────────────────────────────────────────
 export interface FooterLink {
   label: string;
   href: string;
 }
- 
+
 export interface FooterSection {
   heading: string;
   links: FooterLink[];
 }
- 
+
 export interface FooterProps {
   sections: FooterSection[];
   copyrightYear: number;
 }
- 

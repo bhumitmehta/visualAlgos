@@ -2,7 +2,7 @@
 // Static footer — no client directive needed.
 
 import Link from "next/link";
-import { BookOpen, Github, Heart } from "lucide-react";
+import { BookOpen, Heart } from "lucide-react";
 import type { FooterProps } from "./types";
 
 export default function Footer({ sections, copyrightYear }: FooterProps) {
@@ -26,15 +26,15 @@ export default function Footer({ sections, copyrightYear }: FooterProps) {
             <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
               An open-source library of interactive visualizations for learners who want intuition, not just definitions.
             </p>
-            <a
+            {/* <a
               href="https://github.com"
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition-colors"
-            >
-              <Github className="w-4 h-4" />
+            > */}
+              {/* <GitHub className="w-4 h-4" />
               Star on GitHub
-            </a>
+            </a> */}
           </div>
 
           {/* Link sections */}

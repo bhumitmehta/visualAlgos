@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useState, useMemo, useEffect, useRef } from "react";
 import {
   Network, PlayCircle, PauseCircle, Sparkles, Code2,
@@ -7,6 +8,15 @@ import {
   Search, X, SlidersHorizontal, Clock, Tag,
 } from "lucide-react";
 import SearchBar from "@/components/search/SearchBar";
+import Navbar                from "@/components/Navbar";
+import type {
+  NavLink,
+  
+} from "@/components/types";
+
+
+
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Difficulty = "Easy" | "Medium" | "Hard";
 type IconName = "network" | "braces" | "branch" | "default";
@@ -87,7 +97,11 @@ const PROBLEMS: ProblemConfig[] = [
     watchMinutes: 3,
   },
 ];
-
+const NAV_LINKS: NavLink[] = [
+  { label: "Home",       href: "/"           },
+  { label: "Categories", href: "/categories" },
+  { label: "Contribute", href: "/contribute" },
+];
 // ─── Derived filter sets (auto-built from PROBLEMS) ───────────────────────────
 const ALL_DIFFICULTIES: Difficulty[] = ["Easy", "Medium", "Hard"];
 const ALL_PATTERNS = [...new Set(PROBLEMS.map(p => p.patternCategory))].sort();
@@ -346,25 +360,8 @@ export default function HomePage() {
       `}</style>
 
       {/* ── Nav ── */}
-      <nav className="border-b sticky top-0 z-50" style={{borderColor:"rgba(255,255,255,0.06)",background:"rgba(10,10,11,0.85)",backdropFilter:"blur(12px)"}}>
-        <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{background:"rgba(255,255,255,0.08)",border:"1px solid rgba(255,255,255,0.1)"}}>
-              <Network className="w-3.5 h-3.5 text-white" />
-            </div>
-            <span className="syne text-sm font-700 text-white tracking-wide">AlgoViz</span>
-            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{background:"rgba(255,255,255,0.06)",color:"rgba(255,255,255,0.3)"}}>BETA</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <a href="#problems" className="text-[11px] uppercase tracking-widest" style={{color:"rgba(255,255,255,0.4)"}}>Problems</a>
-            <a href="#patterns" className="text-[11px] uppercase tracking-widest" style={{color:"rgba(255,255,255,0.4)"}}>Patterns</a>
-            <a href="https://github.com" target="_blank" rel="noreferrer"
-              className="flex items-center gap-1.5 text-[11px] uppercase tracking-widest" style={{color:"rgba(255,255,255,0.4)"}}>
-              GitHub <ArrowUpRight className="w-3 h-3" />
-            </a>
-          </div>
-        </div>
-      </nav>
+      
+      <Navbar links={NAV_LINKS} />
 
       {/* ── Ticker ── */}
       <div className="border-b overflow-hidden" style={{borderColor:"rgba(255,255,255,0.04)",background:"rgba(255,255,255,0.015)"}}>
