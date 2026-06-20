@@ -109,13 +109,13 @@ const TEST_CASES: TestCase[] = [
 const MOD = 1_000_000_007;
 
 function modpow(base: number, exp: number): number {
-  let res = 1n;
-  let a = BigInt(base) % BigInt(MOD);
-  let b = BigInt(exp);
-  while (b > 0n) {
-    if (b & 1n) res = (res * a) % BigInt(MOD);
-    a = (a * a) % BigInt(MOD);
-    b >>= 1n;
+  let res = 1;
+  let a = base % MOD;
+  let b = exp;
+  while (b > 0) {
+    if (b & 1) res = (res * a) % MOD;
+    a = (a * a) % MOD;
+    b >>= 1;
   }
   return Number(res);
 }
