@@ -99,8 +99,8 @@ const PROBLEMS: ProblemConfig[] = [
 ];
 const NAV_LINKS: NavLink[] = [
   { label: "Home",       href: "/"           },
-  { label: "Categories", href: "/categories" },
-  { label: "Contribute", href: "/contribute" },
+  { label: "Problems", href: "/problems" },
+  { label: "Contribute", href: "https://github.com/bhumitmehta/visualAlgos" },
 ];
 // ─── Derived filter sets (auto-built from PROBLEMS) ───────────────────────────
 const ALL_DIFFICULTIES: Difficulty[] = ["Easy", "Medium", "Hard"];
