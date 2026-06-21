@@ -1,0 +1,16 @@
+{
+  "number": "#3612",
+  "title": "Process String with Special Operations I",
+  "description": "Apply special editing operations to transform a string step by step.",
+  "heroTagline": "Watch characters appear, disappear, and rearrange in real time.",
+  "difficulty": "Medium",
+  "patternCategory": "Strings",
+  "patterns": ["Simulation", "String Processing"],
+  "tags": ["String"],
+  "watchMinutes": 5,
+  "accent": "#F59E0B",
+  "accentMuted": "rgba(245,158,11,0.12)",
+  "accentText": "#FCD34D",
+  "icon": "type",
+  "lcNumber": 3612
+}

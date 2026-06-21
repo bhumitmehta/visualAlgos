@@ -1,0 +1,16 @@
+{
+  "number": "#3691",
+  "title": "Maximum Total Subarray Value II",
+  "description": "Select exactly k subarrays to maximize the total contribution of max minus min values.",
+  "heroTagline": "Watch peaks and valleys compete for maximum contribution.",
+  "difficulty": "Hard",
+  "patternCategory": "Dynamic Programming",
+  "patterns": ["DP", "Monotonic Stack", "Range Queries"],
+  "tags": ["Array", "DP"],
+  "watchMinutes": 9,
+  "accent": "#EF4444",
+  "accentMuted": "rgba(239,68,68,0.12)",
+  "accentText": "#FCA5A5",
+  "icon": "chart",
+  "lcNumber": 3691
+}

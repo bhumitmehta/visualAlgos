@@ -1,0 +1,16 @@
+{
+  "number": "#3558",
+  "title": "Number of Ways to Assign Edge Weights I",
+  "description": "Count valid assignments of weights on tree edges under given constraints.",
+  "heroTagline": "Watch edge weights propagate through the tree while constraints stay satisfied.",
+  "difficulty": "Medium",
+  "patternCategory": "Trees",
+  "patterns": ["Tree DP", "Combinatorics"],
+  "tags": ["Tree", "Math", "DP"],
+  "watchMinutes": 8,
+  "accent": "#10B981",
+  "accentMuted": "rgba(16,185,129,0.12)",
+  "accentText": "#6EE7B7",
+  "icon": "git-branch",
+  "lcNumber": 3558
+}

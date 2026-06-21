@@ -1,0 +1,16 @@
+{
+  "number": "#3838",
+  "title": "Weighted Word Mapping",
+  "description": "Build mappings between words while maximizing weighted relationships.",
+  "heroTagline": "Watch word connections strengthen and reshape the mapping graph.",
+  "difficulty": "Hard",
+  "patternCategory": "Graphs",
+  "patterns": ["Graph Construction", "Hash Map"],
+  "tags": ["String", "Graph"],
+  "watchMinutes": 7,
+  "accent": "#8B5CF6",
+  "accentMuted": "rgba(139,92,246,0.12)",
+  "accentText": "#C4B5FD",
+  "icon": "network",
+  "lcNumber": 3838
+}

@@ -1,0 +1,16 @@
+{
+  "number": "#461",
+  "title": "Hamming Distance",
+  "description": "Count the differing bit positions between two integers.",
+  "heroTagline": "Watch bits light up wherever the numbers disagree.",
+  "difficulty": "Easy",
+  "patternCategory": "Bit Manipulation",
+  "patterns": ["Bitwise Operations"],
+  "tags": ["Bit Manipulation"],
+  "watchMinutes": 3,
+  "accent": "#EC4899",
+  "accentMuted": "rgba(236,72,153,0.12)",
+  "accentText": "#F9A8D4",
+  "icon": "binary",
+  "lcNumber": 461
+}

@@ -1,0 +1,16 @@
+{
+  "number": "#1344",
+  "title": "Angle Between Hands of a Clock",
+  "description": "Calculate the smaller angle formed by the clock hands.",
+  "heroTagline": "Watch clock hands sweep and form precise angles.",
+  "difficulty": "Medium",
+  "patternCategory": "Math",
+  "patterns": ["Geometry", "Simulation"],
+  "tags": ["Math"],
+  "watchMinutes": 3,
+  "accent": "#F97316",
+  "accentMuted": "rgba(249,115,22,0.12)",
+  "accentText": "#FDBA74",
+  "icon": "clock",
+  "lcNumber": 1344
+}

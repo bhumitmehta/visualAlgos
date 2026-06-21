@@ -1,0 +1,16 @@
+{
+  "number": "#72",
+  "title": "Edit Distance",
+  "description": "Compute the minimum operations needed to transform one string into another.",
+  "heroTagline": "Watch the DP table reveal the cheapest transformation path.",
+  "difficulty": "Hard",
+  "patternCategory": "Dynamic Programming",
+  "patterns": ["DP", "Strings"],
+  "tags": ["Dynamic Programming", "String"],
+  "watchMinutes": 8,
+  "accent": "#EF4444",
+  "accentMuted": "rgba(239,68,68,0.12)",
+  "accentText": "#FCA5A5",
+  "icon": "table",
+  "lcNumber": 72
+}

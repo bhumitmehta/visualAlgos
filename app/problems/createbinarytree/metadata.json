@@ -1,0 +1,16 @@
+{
+  "number": "#2196",
+  "title": "Create Binary Tree From Descriptions",
+  "description": "Construct a binary tree from parent-child relationships.",
+  "heroTagline": "Watch nodes connect into a complete tree structure.",
+  "difficulty": "Medium",
+  "patternCategory": "Trees",
+  "patterns": ["Tree Construction", "Hash Map"],
+  "tags": ["Tree", "Binary Tree"],
+  "watchMinutes": 5,
+  "accent": "#10B981",
+  "accentMuted": "rgba(16,185,129,0.12)",
+  "accentText": "#6EE7B7",
+  "icon": "tree",
+  "lcNumber": 2196
+}

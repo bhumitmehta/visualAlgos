@@ -1,0 +1,16 @@
+{
+  "number": "#48",
+  "title": "Rotate Image",
+  "description": "Rotate an NxN matrix by 90 degrees in-place.",
+  "heroTagline": "Watch matrix layers flip and rotate into position.",
+  "difficulty": "Medium",
+  "patternCategory": "Matrix",
+  "patterns": ["Matrix", "Simulation"],
+  "tags": ["Array", "Matrix"],
+  "watchMinutes": 5,
+  "accent": "#8B5CF6",
+  "accentMuted": "rgba(139,92,246,0.12)",
+  "accentText": "#C4B5FD",
+  "icon": "grid",
+  "lcNumber": 48
+}

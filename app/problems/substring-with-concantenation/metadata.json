@@ -1,0 +1,16 @@
+{
+  "number": "#30",
+  "title": "Substring with Concatenation of All Words",
+  "description": "Find all starting indices where a substring contains all words exactly once.",
+  "heroTagline": "Watch word-count windows expand, shrink, and snap into place.",
+  "difficulty": "Hard",
+  "patternCategory": "Sliding Window",
+  "patterns": ["Sliding Window", "Hash Map", "String Matching"],
+  "tags": ["String", "Hash Map"],
+  "watchMinutes": 8,
+  "accent": "#F59E0B",
+  "accentMuted": "rgba(245,158,11,0.12)",
+  "accentText": "#FCD34D",
+  "icon": "braces",
+  "lcNumber": 30
+}

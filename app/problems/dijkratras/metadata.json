@@ -1,0 +1,16 @@
+{
+  "number": "#743",
+  "title": "Dijkstra's Algorithm",
+  "description": "Find shortest paths from a source node in a weighted graph.",
+  "heroTagline": "Watch distances relax as the shortest-path tree emerges.",
+  "difficulty": "Medium",
+  "patternCategory": "Graphs",
+  "patterns": ["Shortest Path", "Priority Queue"],
+  "tags": ["Graph", "Heap"],
+  "watchMinutes": 7,
+  "accent": "#06B6D4",
+  "accentMuted": "rgba(6,182,212,0.12)",
+  "accentText": "#67E8F9",
+  "icon": "network",
+  "lcNumber": 743
+}
