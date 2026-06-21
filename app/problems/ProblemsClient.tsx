@@ -10,7 +10,7 @@ import {
 
 // Import the type from data.ts
 import { Problem } from './data';
-
+import { useRouter } from "next/navigation";
 // ─── Types ────────────────────────────────────────────────────────────────────
 // (Remove the Problem interface definition from here, import it instead)
 
@@ -79,11 +79,14 @@ function Chip({ label, active, accent, onClick, onRemove }: {
 
 // ─── Problem card ─────────────────────────────────────────────────────────────
 
+
 function ProblemCard({ p, hovered, onHover, onLeave, searchQuery }: {
   p: Problem; hovered: boolean;
   onHover: () => void; onLeave: () => void;
   searchQuery: string;
 }) {
+  const router = useRouter(); // Add this import at the top of your file: import { useRouter } from "next/navigation";
+
   function Highlight({ text }: { text: string }) {
     if (!searchQuery) return <>{text}</>;
     const idx = text.toLowerCase().indexOf(searchQuery.toLowerCase());
@@ -100,9 +103,11 @@ function ProblemCard({ p, hovered, onHover, onLeave, searchQuery }: {
   }
 
   return (
-    <Link href={`/problems/${p.slug}`}
-      onMouseEnter={onHover} onMouseLeave={onLeave}
-      className="group relative block rounded-xl overflow-hidden transition-all duration-200"
+    <div
+      onClick={() => router.push(`/problems/${p.slug}`)}
+      onMouseEnter={onHover} 
+      onMouseLeave={onLeave}
+      className="group relative block rounded-xl overflow-hidden transition-all duration-200 cursor-pointer"
       style={{
         border:     `1px solid ${hovered ? p.accent + "40" : "rgba(255,255,255,0.06)"}`,
         background: hovered ? p.accentMuted : "rgba(255,255,255,0.015)",
@@ -156,9 +161,10 @@ function ProblemCard({ p, hovered, onHover, onLeave, searchQuery }: {
             {p.tags.slice(0, 2).join(", ")}
           </span>
           <span className="inline-flex items-center gap-1 ml-auto">
+            {/* This is now safe because it's inside a div, not an <a> */}
             <a href={`https://leetcode.com/problems/${p.slug}/`}
               target="_blank" rel="noreferrer"
-              onClick={e => e.stopPropagation()}
+              onClick={e => e.stopPropagation()} // Prevents card click when clicking this link
               className="flex items-center gap-0.5 hover:opacity-80 transition-opacity"
               style={{ color: "rgba(255,255,255,0.2)" }}>
               LC {p.lcNumber} <ArrowUpRight className="w-3 h-3" />
@@ -184,7 +190,7 @@ function ProblemCard({ p, hovered, onHover, onLeave, searchQuery }: {
       {/* Accent bottom line */}
       <div className="h-0.5 transition-all duration-300"
         style={{ background: hovered ? p.accent : "transparent" }} />
-    </Link>
+    </div>
   );
 }
 
