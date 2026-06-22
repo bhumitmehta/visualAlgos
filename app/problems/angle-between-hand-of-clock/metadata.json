@@ -3,7 +3,7 @@
   "title": "Angle Between Hands of a Clock",
   "description": "Calculate the smaller angle formed by the clock hands.",
   "heroTagline": "Watch clock hands sweep and form precise angles.",
-  "difficulty": "Medium",
+  "difficulty": "Easy",
   "patternCategory": "Math",
   "patterns": ["Geometry", "Simulation"],
   "tags": ["Math"],

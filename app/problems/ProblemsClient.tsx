@@ -8,15 +8,9 @@ import {
   Layers, Table2, Building2, ArrowUpRight, BookOpen,
 } from "lucide-react";
 
-// Import the type from data.ts
-import { Problem } from './data';
+// Import types from data.ts
+import { Problem, IconName } from './data';
 import { useRouter } from "next/navigation";
-// ─── Types ────────────────────────────────────────────────────────────────────
-// (Remove the Problem interface definition from here, import it instead)
-
-type Difficulty       = "Easy" | "Medium" | "Hard";
-type IconName         = "network" | "braces" | "branch" | "layers" | "table" | "building" | "default";
-type PatternCategory  = string;
 
 // ─── Icon resolver (client-side only, avoids RSC serialisation error) ─────────
 
@@ -32,12 +26,16 @@ const ICON_MAP: Record<IconName, React.ElementType> = {
 
 function ProblemIcon({ icon, accent }: { icon: IconName; accent: string }) {
   const I = ICON_MAP[icon];
-  return <I className="h-3.5 w-3.5" style={{ color: accent }} />;
+  
+  // Fallback to default icon if the provided icon doesn't exist
+  const IconComponent = I || ICON_MAP.default;
+  
+  return <IconComponent className="h-3.5 w-3.5" style={{ color: accent }} />;
 }
 
 // ─── Difficulty pill ──────────────────────────────────────────────────────────
 
-function DifficultyPill({ diff }: { diff: Difficulty }) {
+function DifficultyPill({ diff }: { diff: "Easy" | "Medium" | "Hard" }) {
   const cfg = {
     Easy:   { bg: "rgba(16,185,129,0.1)",  text: "#6EE7B7", dot: "#10B981" },
     Medium: { bg: "rgba(245,158,11,0.1)",  text: "#FCD34D", dot: "#F59E0B" },
@@ -79,13 +77,12 @@ function Chip({ label, active, accent, onClick, onRemove }: {
 
 // ─── Problem card ─────────────────────────────────────────────────────────────
 
-
 function ProblemCard({ p, hovered, onHover, onLeave, searchQuery }: {
   p: Problem; hovered: boolean;
   onHover: () => void; onLeave: () => void;
   searchQuery: string;
 }) {
-  const router = useRouter(); // Add this import at the top of your file: import { useRouter } from "next/navigation";
+  const router = useRouter();
 
   function Highlight({ text }: { text: string }) {
     if (!searchQuery) return <>{text}</>;
@@ -161,10 +158,9 @@ function ProblemCard({ p, hovered, onHover, onLeave, searchQuery }: {
             {p.tags.slice(0, 2).join(", ")}
           </span>
           <span className="inline-flex items-center gap-1 ml-auto">
-            {/* This is now safe because it's inside a div, not an <a> */}
             <a href={`https://leetcode.com/problems/${p.slug}/`}
               target="_blank" rel="noreferrer"
-              onClick={e => e.stopPropagation()} // Prevents card click when clicking this link
+              onClick={e => e.stopPropagation()}
               className="flex items-center gap-0.5 hover:opacity-80 transition-opacity"
               style={{ color: "rgba(255,255,255,0.2)" }}>
               LC {p.lcNumber} <ArrowUpRight className="w-3 h-3" />
@@ -198,21 +194,20 @@ function ProblemCard({ p, hovered, onHover, onLeave, searchQuery }: {
 
 export default function ProblemsClient({ initialProblems }: { initialProblems: Problem[] }) {
   const [searchQuery,      setSearchQuery]      = useState("");
-  const [activeDifficulty, setActiveDifficulty] = useState<Difficulty | null>(null);
+  const [activeDifficulty, setActiveDifficulty] = useState<"Easy" | "Medium" | "Hard" | null>(null);
   const [activePattern,    setActivePattern]    = useState<string | null>(null);
   const [activeTag,        setActiveTag]        = useState<string | null>(null);
   const [showFilters,      setShowFilters]      = useState(false);
   const [hovered,          setHovered]          = useState<string | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
 
-  // Use initialProblems instead of hardcoded PROBLEMS
   const PROBLEMS = initialProblems;
 
   // ─── Derived filter sets (auto-built, never hand-edited) ──────────────────────
 
-  const ALL_DIFFICULTIES: Difficulty[]      = ["Easy", "Medium", "Hard"];
-  const ALL_PATTERNS: PatternCategory[]     = [...new Set(PROBLEMS.map(p => p.patternCategory))].sort();
-  const ALL_TAGS:     string[]              = [...new Set(PROBLEMS.flatMap(p => p.tags))].sort();
+  const ALL_DIFFICULTIES: ("Easy" | "Medium" | "Hard")[] = ["Easy", "Medium", "Hard"];
+  const ALL_PATTERNS: string[] = [...new Set(PROBLEMS.map(p => p.patternCategory))].sort();
+  const ALL_TAGS: string[] = [...new Set(PROBLEMS.flatMap(p => p.tags))].sort();
 
   // ── Filtered list ──
   const filtered = useMemo(() => {
@@ -236,7 +231,10 @@ export default function ProblemsClient({ initialProblems }: { initialProblems: P
   const activeFilterCount = [activeDifficulty, activePattern, activeTag].filter(Boolean).length;
 
   function clearAll() {
-    setSearchQuery(""); setActiveDifficulty(null); setActivePattern(null); setActiveTag(null);
+    setSearchQuery(""); 
+    setActiveDifficulty(null); 
+    setActivePattern(null); 
+    setActiveTag(null);
   }
 
   const alphabetical = [...PROBLEMS].sort((a, b) => a.title.localeCompare(b.title));

@@ -17,6 +17,7 @@ import type {
 
 
 
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Difficulty = "Easy" | "Medium" | "Hard";
 type IconName = "network" | "braces" | "branch" | "default";
@@ -360,7 +361,7 @@ export default function HomePage() {
       `}</style>
 
       {/* ── Nav ── */}
-      
+   
       <Navbar links={NAV_LINKS} />
 
       {/* ── Ticker ── */}
@@ -822,6 +823,7 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
     </main>
   );
 }
