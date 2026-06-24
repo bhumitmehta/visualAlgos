@@ -1,0 +1,16 @@
+{
+  "number": "#3700",
+  "title": "Number of ZigZag Arrays II",
+  "description": "Count the total number of valid ZigZag arrays of length n using values in the range [l, r], where no two adjacent elements are equal and no three consecutive elements form a strictly increasing or decreasing sequence.",
+  "heroTagline": "Track how DP states evolve as we extend zigzag sequences with range constraints.",
+  "difficulty": "Hard",
+  "patternCategory": "Dynamic Programming",
+  "patterns": ["Dynamic Programming", "Prefix Sums", "Combinatorics"],
+  "tags": ["Array", "Math", "Dynamic Programming", "Prefix Sum"],
+  "watchMinutes": 12,
+  "accent": "#8B5CF6",
+  "accentMuted": "rgba(139, 92, 246, 0.12)",
+  "accentText": "#C4B5FD",
+  "icon": "activity",
+  "lcNumber": 3700
+}
