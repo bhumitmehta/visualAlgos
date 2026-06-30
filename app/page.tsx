@@ -14,7 +14,7 @@ import type {
   
 } from "@/components/types";
 
-
+import Footer from "@/components/Homepage/Footer/Footer";
 
 
 
@@ -413,7 +413,7 @@ export default function HomePage() {
                   style={{background:selected.accent,color:"#000",transition:"background 0.5s"}}>
                   <PlayCircle className="w-3.5 h-3.5" /> Explore <ArrowRight className="w-3.5 h-3.5" />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noreferrer"
+                <a href="https://github.com/bhumitmehta/visualAlgos" target="_blank" rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-xs font-medium uppercase tracking-widest"
                   style={{border:"1px solid rgba(255,255,255,0.1)",color:"rgba(255,255,255,0.6)"}}>
                   <Code2 className="w-3.5 h-3.5" /> Contribute
@@ -805,24 +805,8 @@ export default function HomePage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="py-10" style={{borderTop:"1px solid rgba(255,255,255,0.05)"}}>
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{background:"rgba(255,255,255,0.06)"}}>
-              <Network className="w-3 h-3 text-white opacity-60" />
-            </div>
-            <span className="syne text-sm font-600 text-white opacity-60">AlgoViz</span>
-          </div>
-          <p className="text-[10px] text-center" style={{color:"rgba(255,255,255,0.2)"}}>
-            Independent educational project. Not affiliated with LeetCode or Codeforces.
-          </p>
-          <div className="flex gap-5">
-            {["Privacy","Terms","GitHub"].map(l=>(
-              <a key={l} href="#" className="text-[10px] uppercase tracking-widest" style={{color:"rgba(255,255,255,0.2)"}}>{l}</a>
-            ))}
-          </div>
-        </div>
-      </footer>
+      
+      <Footer/>
 
     </main>
   );

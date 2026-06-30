@@ -1,0 +1,16 @@
+{
+  "number": "#1358",
+  "title": "Number of Substring containing all three",
+  "description": "",
+  "heroTagline": "Watch all kinds of animation",
+  "difficulty": "Medium",
+  "patternCategory": "Sliding Window",
+  "patterns": ["Sliding Window", "String" , "Hash Table"],
+  "tags": ["String", "Hash Table"],
+  "watchMinutes": 9,
+  "accent": "#EF1444",
+  "accentMuted": "rgba(239,68,68,0.12)",
+  "accentText": "#FCA5A5",
+  "icon": "chart",
+  "lcNumber": 1358
+}
