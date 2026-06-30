@@ -270,7 +270,7 @@ export default function ProblemsClient({ initialProblems }: { initialProblems: P
             <Link href="/" className="text-[11px] uppercase tracking-widest"
               style={{ color: "rgba(255,255,255,0.4)" }}>Home</Link>
             <Link href="/problems" className="text-[11px] uppercase tracking-widest text-white">Problems</Link>
-            <a href="https://github.com" target="_blank" rel="noreferrer"
+            <a href="https://github.com/bhumitmehta/visualAlgos" target="_blank" rel="noreferrer"
               className="flex items-center gap-1.5 text-[11px] uppercase tracking-widest"
               style={{ color: "rgba(255,255,255,0.4)" }}>
               GitHub <ArrowUpRight className="w-3 h-3" />
